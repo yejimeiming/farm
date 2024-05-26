@@ -52,7 +52,7 @@ beforeAll(async () => {
 test(`e2e tests - ${name}`, async () => {
   const page = await app?.firstWindow();
 
-  await page?.screenshot({ path: 'screenshots/app-window.png' });
+  await page?.screenshot({ path: path.join(projectPath, 'screenshots/app-window.png') });
   expect(await page?.textContent('#app h1')).eq(passE2E
     ? undefined
     : 'Electron + Farm + TypeScript');
